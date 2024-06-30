@@ -1,8 +1,14 @@
-﻿# Set the path to FFmpeg relative to the script directory
-$ffmpegPath = Join-Path -Path $PSScriptRoot -ChildPath "ffmpeg\bin\ffmpeg.exe"
+# Set the time threshold between images to detect a new series (in seconds)
+$timeInterval = 2
+
+# Frame rate for the videos (adjustable)
+$outputFrameRate = 30  # Example: You can adjust the desired frame rate here
 
 # Use the directory where the script is executed as the working directory
 $workingDirectory = $PSScriptRoot
+
+ # Set the path to FFmpeg relative to the script directory
+$ffmpegPath = Join-Path -Path $PSScriptRoot -ChildPath "ffmpeg\bin\ffmpeg.exe"
 
 # Prompt for the source folder
 $sourceFolder = Read-Host -Prompt "Please enter the path to the source folder with the images"
@@ -16,16 +22,14 @@ if (-not (Test-Path -Path $sourceFolder)) {
 # Output folder for the series of images (inside the working directory)
 $outputFolder = Join-Path -Path $workingDirectory -ChildPath "Series"
 
-# Output folder for the videos (in the root of the working directory)
-$videoOutputFolder = Join-Path -Path $workingDirectory -ChildPath "StichedVideos"
-
-# Frame rate for the videos (adjustable)
-$outputFrameRate = 30  # Example: You can adjust the desired frame rate here
-
 # Ensure the output folders exist or create them
 if (-not (Test-Path -Path $outputFolder)) {
     New-Item -ItemType Directory -Path $outputFolder | Out-Null
 }
+
+# Output folder for the videos (in the root of the working directory)
+$videoOutputFolder = Join-Path -Path $workingDirectory -ChildPath "StichedVideos"
+
 if (-not (Test-Path -Path $videoOutputFolder)) {
     New-Item -ItemType Directory -Path $videoOutputFolder | Out-Null
 }
