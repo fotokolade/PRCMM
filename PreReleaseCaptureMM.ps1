@@ -12,6 +12,12 @@ $workingDirectory = $PSScriptRoot
  # Set the path to FFmpeg relative to the script directory
 $ffmpegPath = Join-Path -Path $PSScriptRoot -ChildPath "ffmpeg\bin\ffmpeg.exe"
 
+# Check if FFmpeg exists
+if (-not (Test-Path -Path $ffmpegPath)) {
+    Write-Output "FFmpeg not found at $ffmpegPath. Please ensure FFmpeg is installed and the path is correct. Exiting script."
+    exit
+}
+
 # Prompt for the source folder
 $sourceFolder = Read-Host -Prompt "Please enter the path to the source folder with the images"
 
