@@ -13,5 +13,7 @@ No images are moved or deleted, only copied and renamed within the series folder
 5. Stiched videos will be saved under .\StichedVideos
 
 PS: Series are named after the timestamp of the first image
+
 PPS: Minimun amount of images is the set output framerate
+
 PPPS: Cooking can take a while
