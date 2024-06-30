@@ -9,9 +9,9 @@ No images are moved or deleted, only copied and renamed within the series folder
 2. Download and extract latest ffmpeg to D:\PreReleaseShutterMM (ffmpeg.exe needs to be within the subdirectory ffmpeg\bin)
 3. Start the script and enter the images source path
 4. Let it cook...
-5. Detected series will be save under .\Series
+5. Detected series (burst shots) will be save under .\Series
 5. Stiched videos will be saved under .\StichedVideos
 
 PS: Series are named after the timestamp of the first image
-PSS: Minimun amount of images is the set output framerate
-PPS: Cooking can take a while
+PPS: Minimun amount of images is the set output framerate
+PPPS: Cooking can take a while
