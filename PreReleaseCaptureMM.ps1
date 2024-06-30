@@ -1,3 +1,5 @@
+# Pre Release Capture Movie Maker
+
 # Set the time threshold between images to detect a new series (in seconds)
 $timeInterval = 2
 
